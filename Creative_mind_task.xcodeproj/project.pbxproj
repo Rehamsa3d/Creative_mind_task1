@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		803F200F20E1AEC100E3933F /* UIButtonX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F200520E1AEC100E3933F /* UIButtonX.swift */; };
+		803F201420E1AEC100E3933F /* UIViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803F200A20E1AEC100E3933F /* UIViewX.swift */; };
 		808050AB20DFE03100AF5E70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808050AA20DFE03100AF5E70 /* AppDelegate.swift */; };
 		808050B020DFE03100AF5E70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808050AE20DFE03100AF5E70 /* Main.storyboard */; };
 		808050B220DFE03300AF5E70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 808050B120DFE03300AF5E70 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		0CAC5BB7F462B38DD793FECC /* Pods-Creative_mind_task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Creative_mind_task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Creative_mind_task/Pods-Creative_mind_task.debug.xcconfig"; sourceTree = "<group>"; };
 		7F3A53A8B53F3A789992CDF4 /* Pods_Creative_mind_task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Creative_mind_task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		803F200520E1AEC100E3933F /* UIButtonX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonX.swift; sourceTree = "<group>"; };
+		803F200A20E1AEC100E3933F /* UIViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
 		808050A720DFE03100AF5E70 /* Creative_mind_task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Creative_mind_task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		808050AA20DFE03100AF5E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		808050AF20DFE03100AF5E70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,12 +52,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		803F200220E1AEC100E3933F /* DesignableX */ = {
+			isa = PBXGroup;
+			children = (
+				803F200520E1AEC100E3933F /* UIButtonX.swift */,
+				803F200A20E1AEC100E3933F /* UIViewX.swift */,
+			);
+			path = DesignableX;
+			sourceTree = "<group>";
+		};
 		8080509E20DFE03100AF5E70 = {
 			isa = PBXGroup;
 			children = (
-				808050BF20DFE46300AF5E70 /* Extensions */,
-				808050BE20DFE45D00AF5E70 /* Helpers */,
-				808050BD20DFE45800AF5E70 /* Model */,
 				808050A920DFE03100AF5E70 /* Creative_mind_task */,
 				808050A820DFE03100AF5E70 /* Products */,
 				C957A834DC0D308652DE4913 /* Pods */,
@@ -72,8 +82,11 @@
 		808050A920DFE03100AF5E70 /* Creative_mind_task */ = {
 			isa = PBXGroup;
 			children = (
+				803F200220E1AEC100E3933F /* DesignableX */,
+				808050BF20DFE46300AF5E70 /* Extensions */,
+				808050BD20DFE45800AF5E70 /* Model */,
 				808050C320DFE5E500AF5E70 /* View */,
-				808050C220DFE5DC00AF5E70 /* ViewController */,
+				808050C220DFE5DC00AF5E70 /* Controller */,
 				808050AA20DFE03100AF5E70 /* AppDelegate.swift */,
 				808050B120DFE03300AF5E70 /* Assets.xcassets */,
 				808050B320DFE03300AF5E70 /* LaunchScreen.storyboard */,
@@ -90,29 +103,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		808050BE20DFE45D00AF5E70 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		808050BF20DFE46300AF5E70 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				808050CA20E1364D00AF5E70 /* UIView+constraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		808050C220DFE5DC00AF5E70 /* ViewController */ = {
+		808050C220DFE5DC00AF5E70 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				808050CC20E1567900AF5E70 /* HomeVC.swift */,
 				808050C820E1329C00AF5E70 /* TableViewCell.swift */,
-				808050CA20E1364D00AF5E70 /* UIView+constraints.swift */,
 				808050CE20E1586300AF5E70 /* TabsContentVC.swift */,
 			);
-			path = ViewController;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		808050C320DFE5E500AF5E70 /* View */ = {
@@ -255,6 +261,8 @@
 				808050CB20E1364D00AF5E70 /* UIView+constraints.swift in Sources */,
 				808050C920E1329C00AF5E70 /* TableViewCell.swift in Sources */,
 				808050CD20E1567900AF5E70 /* HomeVC.swift in Sources */,
+				803F201420E1AEC100E3933F /* UIViewX.swift in Sources */,
+				803F200F20E1AEC100E3933F /* UIButtonX.swift in Sources */,
 				808050D120E1722E00AF5E70 /* CellInfo.swift in Sources */,
 				808050AB20DFE03100AF5E70 /* AppDelegate.swift in Sources */,
 				808050CF20E1586300AF5E70 /* TabsContentVC.swift in Sources */,
