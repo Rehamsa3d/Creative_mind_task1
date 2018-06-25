@@ -15,6 +15,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var tabContent: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    var pagingViewController : FixedPagingViewController!
     
     var firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabsContentVC") as! TabsContentVC
     var secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabsContentVC") as! TabsContentVC
@@ -27,6 +28,7 @@ class HomeVC: UIViewController {
    
 }
     @IBAction func indexChanged(_ sender: AnyObject) {
+        pagingViewController.select(index: 0)
         switch segmentedControl.selectedSegmentIndex
         {
         case 0:
@@ -40,10 +42,13 @@ class HomeVC: UIViewController {
         default:
             break
         }
-        firstViewController.tableView.reloadData()
-        secondViewController.tableView.reloadData()
-        thirdViewController.tableView.reloadData()
-
+        DispatchQueue.main.async {
+            if self.thirdViewController.tableView != nil {
+                self.firstViewController.tableView.reloadData()
+                self.secondViewController.tableView.reloadData()
+                self.thirdViewController.tableView.reloadData()
+            }
+        }
     }
 // firstPagination
     func setupFirstPagination(){
@@ -58,7 +63,7 @@ class HomeVC: UIViewController {
         
         // Initialize a FixedPagingViewController and pass
         // in the view controllers.
-        let pagingViewController = FixedPagingViewController(viewControllers: [
+        pagingViewController = FixedPagingViewController(viewControllers: [
             firstViewController,
             secondViewController,
             thirdViewController
@@ -69,6 +74,7 @@ class HomeVC: UIViewController {
         tabContent.addSubview(pagingViewController.view)
         tabContent.constrainToEdges(pagingViewController.view)
         pagingViewController.didMove(toParentViewController: self)
+        
     }
     let array1 = [
         CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "1", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
