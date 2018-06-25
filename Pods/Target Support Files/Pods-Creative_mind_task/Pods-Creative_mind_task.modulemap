@@ -1,0 +1,6 @@
+framework module Pods_Creative_mind_task {
+  umbrella header "Pods-Creative_mind_task-umbrella.h"
+
+  export *
+  module * { export * }
+}
