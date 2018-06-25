@@ -12,70 +12,98 @@ import Parchment
 class HomeVC: UIViewController {
 
     @IBOutlet weak var firstPagination: UIView!
-    @IBOutlet weak var secondPagination: UIView!
-    
     @IBOutlet weak var tabContent: UIView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    
+    var firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabsContentVC") as! TabsContentVC
+    var secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabsContentVC") as! TabsContentVC
+    var thirdViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabsContentVC") as! TabsContentVC
     override func viewDidLoad() {
     super.viewDidLoad()
+        
         setupFirstPagination()
 //        setupSecondPagination()
    
 }
+    @IBAction func indexChanged(_ sender: AnyObject) {
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            firstViewController.items = array1
+            secondViewController.items = array2
+            thirdViewController.items = array3
+        case 1:
+            firstViewController.items = array4
+            secondViewController.items = array5
+            thirdViewController.items = array6
+        default:
+            break
+        }
+        firstViewController.tableView.reloadData()
+        secondViewController.tableView.reloadData()
+        thirdViewController.tableView.reloadData()
+
+    }
 // firstPagination
     func setupFirstPagination(){
+       
+        firstViewController.title = "قيد الانتظار"
+        secondViewController.title = "تم القبول"
+        thirdViewController.title = "تم الالغاء"
         
-        let firstViewController = TabsContentVC()
-        let secondViewController = TabsContentVC()
-        
-        firstViewController.title = "الاخرون"
-        secondViewController.title = "فزعاتي"
+        firstViewController.items = array1
+        secondViewController.items = array2
+        thirdViewController.items = array3
         
         // Initialize a FixedPagingViewController and pass
         // in the view controllers.
         let pagingViewController = FixedPagingViewController(viewControllers: [
             firstViewController,
-            secondViewController
+            secondViewController,
+            thirdViewController
             ])
         
-        // Make sure you add the PagingViewController as a child view
         // controller and contrain it to the edges of the view.
         addChildViewController(pagingViewController)
-        firstPagination.addSubview(pagingViewController.view)
-        firstPagination.constrainToEdges(pagingViewController.view)
+        tabContent.addSubview(pagingViewController.view)
+        tabContent.constrainToEdges(pagingViewController.view)
         pagingViewController.didMove(toParentViewController: self)
     }
-    
-//    func setupSecondPagination(){
-//
-//
-//        let firstViewController = TabsContentVC()
-//        let secondViewController = TabsContentVC()
-//        let thirdViewController = TabsContentVC()
-//
-//
-//        firstViewController.title = "قيد الانتظار"
-//        secondViewController.title = "تم القبول"
-//        thirdViewController.title = "تم الالغاء"
-//
-//
-//
-//        //        firstViewController.data = myFirstArray
-//        //        secondViewController.data = mySecondArray
-//        //        thirdViewController.data = myThirdArray
-//
-//
-//        // in the view controllers.
-//        let pagingViewController = FixedPagingViewController(viewControllers: [
-//            firstViewController,
-//            secondViewController,
-//            thirdViewController
-//            ])
-//        // Make sure you add the PagingViewController as a child view
-//        // controller and contrain it to the edges of the view.
-//        addChildViewController(pagingViewController)
-//        secondPagination.addSubview(pagingViewController.view)
-//        secondPagination.constrainToEdges(pagingViewController.view)
-//        pagingViewController.didMove(toParentViewController: self)
-//    }
+    let array1 = [
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "1", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String")
+    ]
+    let array2 = [
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "2", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String")
+    ]
+    let array3 = [
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "3", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String")
+    ]
+    let array4 = [
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String")
+    ]
+    let array5 = [
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String")
+    ]
+    let array6 = [
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_car", imag0: "my_list_help_accepted_info_help_type", imag1: "my_list_help_accepted_time", imag2: "my_list_help_accepted_info_help_type", imag3: "my_list_help_accepted_accept", lable: "String", lable0: "String", lable1: "String", lable2: "String", lable3: "String")
+    ]
 }
