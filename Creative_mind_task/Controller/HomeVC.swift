@@ -90,41 +90,40 @@ class HomeVC: UIViewController {
 
     }
     
-    
     //Mark : data to display
+    
     //    array1
     let array1 = [
-        CellInfo(img: "type_car", lable: "1", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
-        CellInfo(img: "type_car", lable: "1", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
-        CellInfo(img: "type_car", lable: "1", lable0: "String", lable1: "String", lable2: "String", lable3: "String")
+        CellInfo(img: "type_car", lable: "ابى اروح الهايبر و ما عندي سياره ممكن حد يوديني", lable0: "منذ ساعه", lable1: "رجال", lable2: "فزعة سياره", lable3: "٣ فزعوا"),
+        CellInfo(img: "type_car", lable: "اروح العنوان ده ازاي ", lable0: "منذ ساعه", lable1: "رجال", lable2: "فزعة سياره", lable3: "٣ فزعوا"),
+        CellInfo(img: "type_food", lable: "عندي عزومه حد يساعدني",lable0: "منذ ساعه", lable1: "رجال", lable2: "فزعة سياره", lable3: "٣ فزعوا")
     ]
+    
     //array2
     let array2 = [
-        CellInfo(img: "type_car", lable: "2", lable0: "String", lable1: "String", lable2: "String", lable3: "String")
+        CellInfo(img: "type_car", lable: "بدي اسوي شوبنج ", lable0: "منذ ساعه", lable1: "رجال", lable2: "فزعة سياره", lable3: "٣ فزعوا")
     ]
+    
     //array3
     let array3 = [
-        CellInfo(img: "type_car", lable: "3", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
-        CellInfo(img: "type_car", lable: "3", lable0: "String", lable1: "String", lable2: "String", lable3: "String")
+        CellInfo(img: "type_car", lable: "عايزه اشتغل 😂",lable0: "منذ ساعه", lable1: "رجال", lable2: "فزعة سياره", lable3: "٣ فزعوا"),
+        CellInfo(img: "type_car",lable: "اروح العنوان ده ازاي ",lable0: "منذ ساعه", lable1: "رجال", lable2: "فزعة سياره", lable3: "٣ فزعوا")
     ]
     
     //array4
     let array4 = [
-        CellInfo(img: "type_food", lable: "4", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
+        CellInfo(img: "type_food", lable: "عايزه كوره كفر 😅",lable0: "منذ ساعه", lable1: "رجال", lable2: "فزعة سياره", lable3: "٣ فزعوا"),
         ]
     
     //array5
     let array5 = [
-        CellInfo(img: "type_food", lable: "5", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
-        CellInfo(img: "type_food", lable: "5", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
-        CellInfo(img: "type_food", lable: "5", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
-        CellInfo(img: "type_food", lable: "5", lable0: "String", lable1: "String", lable2: "String", lable3: "String")
-    ]
+        CellInfo(img: "type_car", lable: "شابوو يوسف الشريف 👏", lable0: "منذ ساعه", lable1: "رجال", lable2: "فزعة سياره", lable3: "٣ فزعوا"),
+        CellInfo(img: "type_food", lable: "عايزه اشتغل تاني 😭😭", lable0: "منذ ساعه", lable1: "رجال", lable2: "فزعة سياره", lable3: "٣ فزعوا"),
+            ]
     
     //array6
     let array6 = [
-        CellInfo(img: "type_food", lable: "6", lable0: "String", lable1: "String", lable2: "String", lable3: "String"),
-        CellInfo(img: "type_food", lable: "6", lable0: "String", lable1: "String", lable2: "String", lable3: "String")
-        
+        CellInfo(img: "type_food", lable: "اذكر معني كلمة فزعه وضعها في جمله 🙃", lable0: "منذ ساعه", lable1: "رجال", lable2: "فزعة سياره", lable3: "٣ فزعوا"),
+        CellInfo(img: "type_food", lable: "عبد الباسط حموده ريمكس 💃", lable0: "منذ ساعه", lable1: "رجال", lable2: "فزعة سياره", lable3: "٣ فزعوا")
     ]
 }
